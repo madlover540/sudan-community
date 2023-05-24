@@ -8,21 +8,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
 		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+		{% include 'nav.html' %}
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
 			<div id="bg"></div>
 			<div id="overlay"></div>
 			<div id="main">
-                {% include 'nav.html' %}
-                {% include 'home.html' %}
-                {% include 'footer.html' %}
+
+                {% block content %}
+				{% endblock %}
+
 			</div>
 		</div>
-		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
+		<script src="{% static 'main.js' %}"></script>
 	</body>
+	<footer>
+	{% include 'footer.html' %}
+	</footer>
 </html>
