@@ -228,7 +228,7 @@ a:hover {
     transform: translate3d(0, 0, 0);
     /* Set your background with this */
 
-    background: #348cb2 url("bg.jpg") bottom left;
+    background: #00AEEF url("bg.jpg") bottom left;
     background-repeat: repeat-x;
     height: 100%;
     left: 0;
@@ -1093,6 +1093,7 @@ a:hover {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
+    border: #eeeeee;
     border-radius: 20px;
     margin: 0 20px;
     transition: all 0.3s ease; /* Adjust transition to apply to all properties */
@@ -1118,6 +1119,13 @@ a:hover {
     opacity: 0.25; /* added transparency */
 }
 
+
+@keyframes blink {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
 #footer {
     position: fixed;
     bottom: 0;
@@ -1128,27 +1136,13 @@ a:hover {
     z-index: 1000;
 }
 
-#footer .copyright {
-    font-size: 0.8em; /* Smaller text */
-    font-weight: bold; /* Bold text */
-    color: rgba(255, 255, 255, 0.5); /* Semi-transparent text */
-}
-
-#footer .copyright a {
-    color: rgba(255, 255, 255, 0.5); /* Semi-transparent link */
+#footer a {
+    font-weight: normal; /* Make "Sirajjunior" text thin */
+    font-family: -apple-system, serif;
     text-decoration: none;
 }
 
-#footer .copyright a:hover {
-    color: rgba(255, 255, 255, 0.8); /* Less transparent link on hover */
-}
-
-@keyframes blink {
-    0% {opacity: 0.5;}
-    50% {opacity: 1;}
-    100% {opacity: 0.5;}
-}
-
-#footer .copyright a {
-    animation: blink 1s infinite;
+#footer .heart {
+    animation: blink 1s infinite; /* Make the heart symbol blink */
+    font-weight: bold; /* Make the heart symbol bold */
 }
